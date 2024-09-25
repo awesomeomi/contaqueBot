@@ -1,0 +1,124 @@
+{
+    "intents": {
+        "how many": {
+            "type": "COUNT",
+            "query": "SELECT COUNT(*) FROM {table}",
+            "resource": "{table}",
+            "keywords": ["how", "many"],
+            "conditions": {
+                "simple": "SELECT COUNT(*) FROM {table}",
+                "with_condition": "SELECT COUNT(*) FROM {table} WHERE {condition_column} = '{condition_value}'",
+                "with_relationship": "SELECT COUNT(*) FROM {primary_table} WHERE {foreign_key_column} IN (SELECT id FROM {secondary_table} WHERE name = '{secondary_value}')"
+            }
+        }
+    },
+    "resources": {
+        "domain": {
+            "table": "ct_domain",
+            "id_column": "id"
+        },
+        "domains": {
+            "table": "ct_domain",
+            "id_column": "id"
+        },
+        "campaigns": {
+            "table": "ct_campaign",
+            "id_column": "campaignid"
+        },
+        "campaign": {
+            "table": "ct_campaign",
+            "id_column": "campaignid"
+        },
+        "dispositions": {
+            "table": "ct_dispositions",
+            "foreign_key_column": "campaignid"
+        },
+        "users": {
+            "table": "ct_user",
+            "foreign_key_column": "domainid"
+        },
+        "user": {
+            "table": "ct_user",
+            "foreign_key_column": "domainid"
+        },
+        "usergroup": {
+            "table": "ct_user_group"
+        },
+        "usergroups": {
+            "table": "ct_user_group"
+        },
+        "user-group": {
+            "table": "ct_user_group"
+        },
+        "servers": {
+            "table": "ct_servers"
+        },
+        "server": {
+            "table": "ct_servers"
+        },
+        "agents": {
+            "table": "ct_live_agents_"
+        },
+        "agent": {
+            "table" : "ct_live_agents_"
+        },
+        "domainadmin": {
+            "table" : "ct_user"
+        },
+        "supervisor": {
+            "table" : "ct_user"
+        },
+        "maker": {
+            "table" : "ct_user"
+        },
+        "checker": {
+            "table" : "ct_user"
+        },
+        "clickeragent": {
+            "table" : "ct_user"
+        },
+        "clickeragents": {
+            "table" : "ct_user"
+        }
+        
+    },
+    "conditions": {
+        "active": {
+            "column": "status",
+            "value": "ACTIVE"
+        },
+        "inactive": {
+            "column": "status",
+            "value": "INACTIVE"
+        },
+        "domain admin": {
+            "column": "type",
+            "value": "DOMAIN-ADMIN"
+        },
+        "domainadmin": {
+            "column": "type",
+            "value": "DOMAIN-ADMIN"
+        },
+        "supervisor": {
+            "column": "type",
+            "value": "SUPERVISOR"
+        },
+        "checker": {
+            "column": "type",
+            "value": "CHECKER"
+        },
+        "maker": {
+            "column": "type",
+            "value": "MAKER"
+        },
+        "clickeragent": {
+            "column": "clickeragent",
+            "value": "TRUE"
+        },
+        "clickeragents": {
+            "column": "clickeragent",
+            "value": "TRUE"
+        }
+        
+    }
+}

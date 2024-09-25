@@ -1,0 +1,15 @@
+{
+    "count": {
+      "keywords": ["how many", "number of"],
+      "query_template": "SELECT COUNT(*) FROM {table};"
+    },
+    "select": {
+      "keywords": ["which", "what", "list", "details"],
+      "query_template": "SELECT * FROM {table};"
+    },
+    "date": {
+      "keywords": ["when", "date"],
+      "query_template": "SELECT * FROM {table} WHERE created_at = CURRENT_DATE;"
+    }
+  }
+  

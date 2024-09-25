@@ -1,0 +1,62 @@
+{
+    "tables": {
+        "campaign": "ct_campaign",
+        "campaigns": "ct_campaign",
+        "domain": "ct_domain",
+        "domains": "ct_domain",
+        "user": "ct_user",
+        "users": "ct_user",
+        "voice server": "ct_voice_server",
+        "voice servers": "ct_voice_server",
+        "disposition": "ct_dispositions",
+        "dispositions": "ct_dispositions",
+        "queue": "ct_campaign_queue",
+        "queues": "ct_campaign_queue",
+        "crm": "ct_crmtable",
+        "usergroups": "ct_user_group",
+        "usergroup":"ct_user_group",
+        "skill": "ct_skill",
+        "skills": "ct_skill",
+        "pausecode": "ct_pause_codes",
+        "roles": "ct_roles",
+        "role" : "ct_roles",
+        "trunk" : "ct_servertrunkgroups",
+        "trunks" : "ct_servertrunkgroups"
+    },
+        "id_columns": {
+        "ct_campaign": "campid",
+        "ct_usergroup": "usergroupid",
+        "ct_user": "userid",
+        "ct_dispositions": "dispoid"
+    },
+    "columns": {
+        "status": ["status", "state"],
+        "name": ["name", "title"],
+        "description": ["description", "desc"],
+        "domainid": ["domainid", "domain id", "domain"],
+        "created_at": ["created_at", "creation date", "created date"],
+        "call_status": ["call_status", "call status"]
+    },
+    "values": {
+        "active": {
+            "column": "status",
+            "aliases": ["active", "enabled", "running", "on"]
+        },
+        "inactive": {
+            "column": "status",
+            "aliases": ["inactive", "disabled", "stopped", "off"]
+        },
+        "in_call": {
+            "column": "call_status",
+            "aliases": ["in call", "on call", "busy"]
+        },
+        "available": {
+            "column": "call_status",
+            "aliases": ["available", "free", "idle"]
+        }
+    },
+    "aggregations": {
+        "count": ["how many", "number of", "count"],
+        "list": ["list", "show", "get", "fetch", "retrieve"]
+    }
+}
